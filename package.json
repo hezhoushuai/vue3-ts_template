@@ -4,7 +4,16 @@
     "dev": "vite",
     "cz": "git cz",
     "build": "vue-tsc --noEmit && vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "lint-staged": "lint-staged",
+    "prepare": "husky install",
+    "commitlint": "commitlint --config commitlint.config.js -e -V"
+  },
+  "lint-staged": {
+    "src/**/*.{js,vue,md,json}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "vue": "^3.0.5"
